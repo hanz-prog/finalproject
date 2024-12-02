@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    background-color: #081b29;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-align: center;
+    transition: background-color 0.5s ease-in-out; /* Added smooth background color transition */
+}
+
+.splash-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #081b29;
+    opacity: 0;
+    animation: fadeIn 2s forwards; /* Fade in transition for splash screen */
+}
+
+.content {
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s 1s forwards; /* Fade in transition for content */
+}
+
+.text-content h1 {
+    font-size: 2.5rem;
+    color: #0ef;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: slideUp 1.5s ease-out forwards 0.5s; /* Added slide-up transition */
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #aaa;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideUp 1.5s ease-out forwards 1s; /* Added slide-up transition */
+}
+.btn-box{
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards ;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef,
+    0 0 25px #0ef;
+}
+.btn-box:hover{
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px cyan, 
+    0 0 100px cyan, 0 0 200px cyan;
+}
+
+
+.btn-enter {
+    padding: 15px 40px;
+    background-color: #0ef;
+    color: #081b29;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+    opacity: 0;
+    transform: scale(0);
+    animation: buttonAppear 1s forwards 1.5s; /* Button appearing transition */
+}
+
+.btn-enter:hover{
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px cyan, 
+    0 0 100px cyan, 0 0 200px cyan;
+}
+
+/* Keyframes for transitions */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
